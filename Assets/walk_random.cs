@@ -8,7 +8,6 @@ public class walk_random : MonoBehaviour
     public Rigidbody rb;
     public Vector2 movement;
 
-    private Rigidbody iguana;
     // Start is called before the first frame update
     void Start()
     {
