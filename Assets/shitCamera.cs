@@ -24,8 +24,8 @@ public class shitCamera : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             maincam = !maincam;
-            mainCamera.enabled = maincam;
-            CameraTwo.enabled = !maincam;
+            mainCamera.enabled = maincam; // bliver false
+            CameraTwo.enabled = !maincam; // bliver true
         }
     }
 }
