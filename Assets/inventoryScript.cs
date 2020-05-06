@@ -10,7 +10,19 @@ public class inventoryScript : MonoBehaviour
 
     public void showAndHidePanel()
     {
-       
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            if (panel.active == true)
+            {
+                panel.gameObject.SetActive(false);
+            }
+            else
+            {
+                panel.gameObject.SetActive(true);
+            }
+
+
+        }
     }
     // Start is called before the first frame update
     void Start()
@@ -21,18 +33,6 @@ public class inventoryScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            if (panel.active== true)
-            {
-                panel.gameObject.SetActive(false);
-            }
-            else
-            {
-                panel.gameObject.SetActive(true);
-            }
-
-            
-        }
+       showAndHidePanel();
     }
 }
