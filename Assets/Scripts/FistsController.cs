@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FistsController : MonoBehaviour
@@ -46,13 +45,13 @@ public class FistsController : MonoBehaviour
                 attack2Streak = 0;
             }
         }
-        
-        
+
+
         yield return new WaitForSeconds(dmgDelay);
         //Actual attacking
         RaycastHit hit;
-        ray = new Vector3(Screen.width/2, Screen.height/2, 0f);
-        if (Physics.Raycast (Camera.main.ScreenPointToRay(ray), out hit))
+        ray = new Vector3(Screen.width / 2, Screen.height / 2, 0f);
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(ray), out hit))
         {
             distance = hit.distance;
             if (distance < maxDistance)

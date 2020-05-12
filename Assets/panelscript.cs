@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class panelscript : MonoBehaviour
 {
@@ -28,6 +26,6 @@ public class panelscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       showAndHideInventory();
+        showAndHideInventory();
     }
 }

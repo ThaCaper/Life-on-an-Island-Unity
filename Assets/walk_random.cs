@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 public class walk_random : MonoBehaviour
 {
-   
+
     public Transform tagret;
     private NavMeshAgent agent;
 
