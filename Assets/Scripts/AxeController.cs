@@ -23,42 +23,24 @@ public class AxeController : MonoBehaviour, ToolInterface
     private int attack1Streak = 0;
     private int attack2Streak = 0;
 
+    public float CPSlimit = 10f;
+    public float timeout = 0;
     // Update is called once per frame
     void Update()
     {
+        /*if (timeout > 0)
+        {
+            timeout -= Time.deltaTime;
+        }
+        */
         if (Input.GetButtonDown("Fire1"))
         {
+            //timeout = 1f; //CPS limit
             StartCoroutine(ToolAttack());
+            HitTree();
         }
 
-        //forward = transform.TransformDirection(Vector3.forward);
-        forward = Camera.main.transform.forward;
-        if (Physics.Raycast(transform.position, forward, out hit, rayLength))
-        {
-            if (hit.collider.gameObject.tag == "Tree")
-            {
-                treeScript = GameObject.Find(hit.collider.gameObject.name).GetComponent<TreeController>();
-                if (Input.GetButtonDown("Fire1"))
-                {
-                    Debug.Log("Tree got hit");
-                    treeScript.treeHealth -= 1;
-                    StartCoroutine(WaitForTree());
-                }
-            }
-        }
-
-        if (Physics.Raycast(transform.position, forward, out hit, rayLength))
-        {
-            if (hit.collider.gameObject.tag == "Tree")
-            {
-                treeScript = GameObject.Find(hit.collider.gameObject.name).GetComponent<TreeController>();
-                if (Input.GetButtonDown("Fire1"))
-                {
-                    treeScript.fallHealth -= 1;
-                }
-            }
-        }
-
+        
     }
 
     IEnumerator WaitForTree()
@@ -107,5 +89,23 @@ public class AxeController : MonoBehaviour, ToolInterface
         }
         anim.SetBool("Hit01", false);
         anim.SetBool("Hit02", false);
+    }
+
+    void HitTree()
+    {
+        forward = Camera.main.transform.forward;
+        if (Physics.Raycast(transform.position, forward, out hit, rayLength))
+        {
+            if (hit.collider.gameObject.tag == "Tree")
+            {
+                treeScript = GameObject.Find(hit.collider.gameObject.name).GetComponent<TreeController>();
+                if (Input.GetButtonDown("Fire1").Equals(true))
+                {
+                    Debug.Log("Tree got hit");
+                    treeScript.treeHealth -= 1;
+                    StartCoroutine(WaitForTree());
+                }
+            }
+        }
     }
 }

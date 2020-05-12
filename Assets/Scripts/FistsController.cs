@@ -26,7 +26,7 @@ public class FistsController : MonoBehaviour
     {
         if (Random.value >= 0.5 && attack1Streak <= 2)
         {
-            anim.SetBool("Attack1", true);
+            anim.SetBool("Hit01", true);
             attack1Streak += 1;
             attack2Streak = 0;
         }
@@ -34,13 +34,13 @@ public class FistsController : MonoBehaviour
         {
             if (attack2Streak <= 2)
             {
-                anim.SetBool("Attack2", true);
+                anim.SetBool("Hit02", true);
                 attack1Streak = 0;
                 attack2Streak += 1;
             }
             else
             {
-                anim.SetBool("Attack1", true);
+                anim.SetBool("Hit01", true);
                 attack1Streak += 1;
                 attack2Streak = 0;
             }
@@ -59,7 +59,7 @@ public class FistsController : MonoBehaviour
                 hit.transform.SendMessage("ApplyDmg", dmg, SendMessageOptions.DontRequireReceiver);
             }
         }
-        anim.SetBool("Attack1", false);
-        anim.SetBool("Attack2", false);
+        anim.SetBool("Hit01", false);
+        anim.SetBool("Hit02", false);
     }
 }

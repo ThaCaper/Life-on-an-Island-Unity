@@ -120,10 +120,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   treeHealth: 5
-  fallHealth: 5
-  logs: {fileID: 0}
+  logs: {fileID: 420794, guid: a9971469a4ff6464da5e7921fdd1aea2, type: 3}
   tree: {fileID: 114418}
   position: {x: 0, y: 0, z: 0}
+  speed: 0
 --- !u!54 &2385414333948059076
 Rigidbody:
   m_ObjectHideFlags: 0

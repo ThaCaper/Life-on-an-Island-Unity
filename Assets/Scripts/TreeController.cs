@@ -1,14 +1,15 @@
 ﻿using System.Collections;
+using UnityEditor;
 using UnityEngine;
 
 public class TreeController : MonoBehaviour
 {
     public int treeHealth = 5;
-    public int fallHealth = 5; // this is new, because you need chop the tree again after fall. i am right? hehehe
     public Transform logs;
     public GameObject tree;
     public Vector3 position;
 
+    public int speed = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,7 @@ public class TreeController : MonoBehaviour
         if (treeHealth <= 0)
         {
             GetComponent<Rigidbody>().isKinematic = false;
-            GetComponent<Rigidbody>().AddForce(transform.forward);
+            GetComponent<Rigidbody>().AddForce(transform.forward * speed);
             StartCoroutine(DestroyTree());
         }
     }
@@ -31,16 +32,11 @@ public class TreeController : MonoBehaviour
     {
         yield return new WaitForSeconds(7);
         GetComponent<Rigidbody>().isKinematic = true;
+        Destroy(tree);
 
-        if (fallHealth <= 0)
-        {
-            Destroy(tree);
-
-            position = new Vector3(Random.Range(-1.0f, 1.0f), 0, Random.Range(-1.0f, 1.0f));
-            Instantiate(logs, tree.transform.position + new Vector3(0, 0, 0) + position, Quaternion.identity);
-            Instantiate(logs, tree.transform.position + new Vector3(2, 0, 0) + position, Quaternion.identity);
-            Instantiate(logs, tree.transform.position + new Vector3(5, 0, 0) + position, Quaternion.identity);
-        }
-
+        position = new Vector3(Random.Range(-1.0f, 1.0f), 0, Random.Range(-1.0f, 1.0f));
+        Instantiate(logs, tree.transform.position + new Vector3(0, 0, 0) + position, Quaternion.identity);
+        Instantiate(logs, tree.transform.position + new Vector3(2, 0, 0) + position, Quaternion.identity);
+        Instantiate(logs, tree.transform.position + new Vector3(5, 0, 0) + position, Quaternion.identity);
     }
 }
