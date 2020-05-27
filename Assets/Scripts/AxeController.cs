@@ -28,14 +28,14 @@ public class AxeController : MonoBehaviour, ToolInterface
     // Update is called once per frame
     void Update()
     {
-        /*if (timeout > 0)
+        if (timeout > 0)
         {
             timeout -= Time.deltaTime;
         }
-        */
-        if (Input.GetButtonDown("Fire1"))
+
+        else if (Input.GetButtonDown("Fire1"))
         {
-            //timeout = 1f; //CPS limit
+            timeout = 0.5f; //CPS limit
             StartCoroutine(ToolAttack());
             HitTree();
         }

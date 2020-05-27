@@ -8,8 +8,10 @@ public class TreeController : MonoBehaviour
     public Transform logs;
     public GameObject tree;
     public Vector3 position;
+    public Terrain terrain;
 
     public int speed = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,4 +41,5 @@ public class TreeController : MonoBehaviour
         Instantiate(logs, tree.transform.position + new Vector3(2, 0, 0) + position, Quaternion.identity);
         Instantiate(logs, tree.transform.position + new Vector3(5, 0, 0) + position, Quaternion.identity);
     }
+
 }
