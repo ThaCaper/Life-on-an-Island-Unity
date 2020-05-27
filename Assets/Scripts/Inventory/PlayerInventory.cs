@@ -14,7 +14,15 @@ public class PlayerInventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            inventory.Save();
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            inventory.Load();
+        }
     }
 
     public void OnTriggerEnter(Collider other)

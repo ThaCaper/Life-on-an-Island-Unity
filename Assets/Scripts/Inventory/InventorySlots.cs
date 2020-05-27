@@ -8,11 +8,13 @@ public class InventorySlots : ScriptableObject
 {
     public ItemObject item;
     public int amount;
+    public int id;
 
-    public InventorySlots(ItemObject _item, int _amount)
+    public InventorySlots(ItemObject _item, int _amount, int _id)
     {
         item = _item;
         amount = _amount;
+        id = _id;
     }
 
     public void AddAmount(int value)
