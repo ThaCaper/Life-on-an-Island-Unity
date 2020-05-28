@@ -2751,6 +2751,7 @@ GameObject:
   - component: {fileID: 2087297196}
   - component: {fileID: 2087297195}
   - component: {fileID: 2087297197}
+  - component: {fileID: 2087297198}
   m_Layer: 0
   m_Name: buildingplacementcoller
   m_TagString: Untagged
@@ -2780,7 +2781,7 @@ MonoBehaviour:
   - {fileID: 157414, guid: fdf9b49c3452f5e46975f78eeb39ad87, type: 3}
   - {fileID: 171044, guid: 17c6d201188adf8449dfffba0371a0ca, type: 3}
   - {fileID: 129050, guid: 386d664a5360b504985133783b27aba2, type: 3}
-  - {fileID: 150944, guid: 3cf41fe215cf986488e36ead276bed6e, type: 3}
+  - {fileID: 129574, guid: 1109e71607c99e34c9a831260139cd7a, type: 3}
 --- !u!4 &2087297196
 Transform:
   m_ObjectHideFlags: 0
@@ -2790,7 +2791,7 @@ Transform:
   m_GameObject: {fileID: 2087297194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -2809,6 +2810,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!65 &2087297198
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087297194}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2090006506 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 2a8bdbe6c84953e44a0286ea2a605c7c,
