@@ -27,14 +27,14 @@ public class buildingplacementcontoller : MonoBehaviour
 
     private void releaseIfClick()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.B))
         {
             currentPlaceObject = null;
         }
     }
 
 
-    // to do rotate with Q and E
+    // TODO rotate with Q and E
     private void rotateFromMouseWheel()
     {
         if (Input.GetKeyDown(KeyCode.E))

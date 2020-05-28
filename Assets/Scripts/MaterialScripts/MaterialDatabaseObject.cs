@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[CreateAssetMenu(fileName = "New Item Database", menuName = "Inventory System/Items/Database")]
 public class MaterialDatabaseObject : ScriptableObject, ISerializationCallbackReceiver
 {
     public ItemObject[] items;
@@ -9,7 +9,7 @@ public class MaterialDatabaseObject : ScriptableObject, ISerializationCallbackRe
     public Dictionary<int, ItemObject> getItem = new Dictionary<int, ItemObject>();
     public void OnBeforeSerialize()
     {
-        throw new System.NotImplementedException();
+        getItem = new Dictionary<int, ItemObject>();
     }
 
     public void OnAfterDeserialize()

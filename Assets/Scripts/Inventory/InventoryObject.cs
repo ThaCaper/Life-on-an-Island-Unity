@@ -4,8 +4,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEditor;
 using UnityEngine;
-[CreateAssetMenu(fileName = "New Item Database", menuName = "Inventory System/Items/Database")]
-public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
+public class InventoryObject : ScriptableObject
 {
     public string savePath;
     private MaterialDatabaseObject database;
@@ -32,7 +31,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
             }
         }
         Container.Add(new InventorySlots(_item, _amount, database.getId[_item]));
-        
+
     }
 
     public void Save()
