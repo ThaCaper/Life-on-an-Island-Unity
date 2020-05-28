@@ -123,6 +123,7 @@ public class buildingplacementcontoller : MonoBehaviour
                         Destroy(currentPlaceObject);
                     }
                     currentPlaceObject = Instantiate(placeableObjectPrefabs[i]);
+                    currentPrefabIndex = i;
                 }
 
                    
