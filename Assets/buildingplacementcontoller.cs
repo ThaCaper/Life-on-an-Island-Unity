@@ -101,9 +101,14 @@ public class buildingplacementcontoller : MonoBehaviour
                  * den if statment tjekker på om vi tidligere har trykke på et tal
                  * så hvis vi har trykket på 5
                  * og så trykker på 5 igen så sletter vi bygning
-                 *else
                  *
-                 * vi tjekker om currentPlaceObject != null 
+                 * else
+                 *
+                 * vi tjekker om currentPlaceObject != null
+                 *så hvis vi har trykket på 5
+                 * og så trykker på 3 igen så sletter vi bygning
+                 * så skulle vi gerne slette bygning 5
+                 * derefter satte vi vores currentprefab ind i spillet
                  *
                  */
                 if (pressedKeyOfCurrentPrefab(i))

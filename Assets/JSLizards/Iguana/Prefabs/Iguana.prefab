@@ -1278,6 +1278,9 @@ GameObject:
   - component: {fileID: 13662094}
   - component: {fileID: 11458590}
   - component: {fileID: 11455332}
+  - component: {fileID: 155185738}
+  - component: {fileID: 155185737}
+  - component: {fileID: 155185744}
   m_Layer: 0
   m_Name: Iguana
   m_TagString: Untagged
@@ -1294,7 +1297,7 @@ Transform:
   m_GameObject: {fileID: 141256}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.65600777, y: 0.5, z: 0.08933216}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 431730}
   - {fileID: 441410}
@@ -1374,6 +1377,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7fec05d8fe384476bbdcb7f8aafd325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!143 &155185738
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141256}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!195 &155185737
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141256}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &155185744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 777f6ee577a702849853ab862a56c95b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
+  directionChangeInterval: 2
+  maxHeadingChange: 20
 --- !u!1 &142006
 GameObject:
   m_ObjectHideFlags: 0
@@ -2105,6 +2163,8 @@ GameObject:
   m_Component:
   - component: {fileID: 431730}
   - component: {fileID: 13796578}
+  - component: {fileID: 1571437724}
+  - component: {fileID: 1571437725}
   m_Layer: 0
   m_Name: Iguana
   m_TagString: Untagged
@@ -2120,7 +2180,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 163552}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -47, y: 0, z: -65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 476318}
@@ -2274,6 +2334,43 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.000000044703484, y: 0.013201963, z: -0.079720005}
     m_Extent: {x: 0.1874488, y: 0.08502804, z: 0.34794134}
   m_DirtyAABB: 0
+--- !u!114 &1571437724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163552}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 777f6ee577a702849853ab862a56c95b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
+  directionChangeInterval: 2
+  maxHeadingChange: 20
+--- !u!195 &1571437725
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163552}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.18744875
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.0041723
+  m_BaseOffset: 0.50208616
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &164840
 GameObject:
   m_ObjectHideFlags: 0
