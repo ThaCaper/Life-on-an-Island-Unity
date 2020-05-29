@@ -51,21 +51,6 @@ public class WeaponSwitch : MonoBehaviour
             currentWeapon = maxWeapons;
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            currentWeapon = 0;
-            SelectWeapon(currentWeapon);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2) && maxWeapons >= 1)
-        {
-            currentWeapon = 1;
-            SelectWeapon(currentWeapon);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && maxWeapons >= 2)
-        {
-            currentWeapon = 2;
-            SelectWeapon(currentWeapon);
-        }
     }
 
     private void SelectWeapon(int currentWeapon)
